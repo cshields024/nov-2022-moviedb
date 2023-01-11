@@ -8,7 +8,7 @@ const cors = require('cors')
 // ! connecting to the DB
 const mongoose = require("mongoose")
 
-mongoose.connect("mongodb://localhost:27017/moviedb");
+mongoose.connect(process.env.DATABASEURL);
 const db = mongoose.connection
 
 db.once("open", () => {
